@@ -12,7 +12,29 @@
 
 首先将页面上的图片的 src 属性设为空字符串，而图片的真实路径则设置在data-src属性中，当页面滚动的时候需要去监听scroll事件，判断是否进入可视区域及图片是否加载。如果图片进入可视区域，并且未加载，则使src的值等于data-src的值，是图片加载。
 ```
-
+$(window).on('scroll',function(){
+  $('.container img').each(function(){
+          //img出现在窗口并且未加载 ，则加载img
+          if(checkShow($(this)) && !isLoaded($(this))){
+              loadImg($(this));
+          }
+      });
+})
 ```
+
+## 项目优化
+
+1. 打开页面即还没有发生滚动事件时，页面就有图片展示。
+  解决办法：在触发滚动事件之前执行以下代码
+  ```
+   $('.container img').each(function(){
+          //img出现在窗口并且未加载 ，则加载img
+          if(checkShow($(this)) && !isLoaded($(this))){
+              loadImg($(this));
+          }
+      });
+  ```
+ 2. 浏览器性能优化：因为用户进行一次滚动页面，代码代码会执行很多次，所以防止性能消耗，使用定时器setTimeout();
+
 
 
