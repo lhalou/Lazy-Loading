@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片懒加载</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+        ul,li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .container li {
+            float: left;
+            margin: 10px 50px;
+        }
+        .clear:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .container li img {
+            width: 200px;
+            height: 180px;
+            text-align: center;
+        }
+        p {
+            width: 600px;
+            margin: 10px auto;
+            background: #ccc;
+            color: #000;
+            font-size: 20px;
+            height: 40px;
+            line-height:40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<ul class = "container clear">
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg"  data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ff/af/e9/ffafe9fc82a60e8ee8d7c961c4c6d8fb.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/ed/de/0f/edde0f9a1756fb7b47983f29e76f5732.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://file05.16sucai.com/2015/0529/06334cc17d0cc988485f0626520ad788.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/26/c0/14139494_1348624365103.jpg">
+        </a>
+    </li>
+    <li>
+        <a href = "#">
+            <img src = "http://img2.imgtn.bdimg.com/it/u=156985323,908474501&fm=26&gp=0.jpg" data-src = "http://up.enterdesk.com/edpic_source/19/53/2a/19532a0ad9fff6d1c8713f959f6b3655.jpg">
+        </a>
+    </li>
+</ul>
+<p> .... </p>
+<script src = "http://kejian.jirengu.com/static/js/jquery-1.11.1.min.js"></script>
+<script src = "index.js"></script>
+</body>
+</html>
